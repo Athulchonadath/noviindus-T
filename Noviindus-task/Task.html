@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Task.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <title>Document</title>
+</head>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light" id="Nav-bar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img
+                    src="data:image/png;base64,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"
+                    id="logoimg" alt="" /></a>
+            <b style="color: rgb(12, 12, 110)">MILLIONDOTS
+                <h6 id="trading">TRADING MADE SIMPLE</h6>
+            </b>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#snp">Sapphire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" id="letstalk" type="submit">
+                        Lets's Talk
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- //Nav-end// -->
+    <br /><br /><br />
+    <div class="car" id="top" style="width: 100%">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="want-to-be">
+                    <h2 id="want">
+                        <b>Want to be a <br />
+                            successful trader ?</b>
+                    </h2>
+                    <br />
+                    <h6 style="font-size: smaller; color: grey; font-family: sans-serif">
+                        Learn & trade together with india's #1 <br />
+                        Trust by over 4500 + Traders
+                    </h6>
+                    <button id="get-start">Get Started</button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img src="hero-slide-1 (1) 1.png" alt="">
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="cards">
+        <div class="row">
+            <div class="col-12" id="btns">
+                <center>
+                    <button id="sec-tw-btn">
+                        <span id="icon1"><img src="Vector.png" alt=""> </span>4500+</button><button id="sec-tw-btn">
+                        <span id="icon2"><img src="Vector.png" alt=""></span>255++</button><button id="sec-tw-btn">
+                        <span id="icon3"><img src="Vector.png" alt=""> </span>
+                    </button>
+                </center>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <!-- //fouth-sectn// -->
+    <div class="car2" style="width: 100%">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="want-to-be">
+                    <h2 style="letter-spacing: 1px">
+                        <b>By traders,<br />
+                            To traders to be.</b>
+                    </h2>
+                    <br />
+                    <h6 style="font-size: smaller; color: grey; font-family: sans-serif">
+                        Building india's one and only traders ecosystem
+                    </h6>
+                    <p style="font-size: smaller; margin-top: 10px">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea
+                        asperiores totam? Porro fugiat, dolores accusantium excepturi nisi
+                        amet, fuga aut aperiam dolorem pariatur asperiores nesciunt
+                        laboriosam laudantium repudiandae iste?
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6">
+                    <img src="image 5.png"
+                        style="width: 100%;margin-left: 20%;" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <br /><br /> -->
+    <!-- fifth-section// -->
+
+    <div class="car3" id="sap" style="width: 100%">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="want-to-be">
+                    <h2 style="letter-spacing: 1px; color: white">
+                        <b>Become a pro trader<br />from absolute basics..</b>
+                    </h2>
+                    <br />
+                    <!-- <h6 style="font-size: smaller;color:grey;font-family: sans-serif;">Building india's one and only traders ecosystem </h6> -->
+                    <p style="color: white">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea
+                        asperiores totam? Porro fugiat, dolores accusantium excepturi nisi
+                        amet, fuga aut aperiam dolorem pariatur asperiores nesciunt
+                        laboriosam laudantium repudiandae iste?
+                    </p>
+                </div>
+                <div class="card">
+                    <center>
+                        <h3>Sapphire <br />Membership</h3>
+                    </center>
+                    <table>
+                        <tr>
+                            <td>s</td>
+                            <td id="card-data">
+                                * Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Nulla hic error natus accusamus voluptate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>s</td>
+                            <td id="card-data">
+                                * Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Nulla hic error natus accusamus voluptate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>s</td>
+                            <td id="card-data">
+                                * Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Nulla hic error natus accusamus voluptate
+                            </td>
+                        </tr>
+                        <button id="card-btn">
+                            <center>$ 43,500/year</center>
+                        </button>
+                    </table>
+                    <br />
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <img src="service-img-1.png" style="margin-top: 20%;margin-left: 10%;" alt="">
+                <!-- <img src="https://i.pinimg.com/originals/a2/56/eb/a256eb07383ab0f65b75114a04bb0ad7.png" id="phoneimg" alt=""> -->
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- //sixt-section// -->
+    <div class="car2" id="snp" style="width: 100%">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="want-to-be">
+                    <h2 style="letter-spacing: 1px">
+                        <b>By traders,<br />
+                            To traders to be.</b>
+                    </h2>
+                    <br />
+                    <h6 style="font-size: smaller; color: grey; font-family: sans-serif">
+                        Building india's one and only traders ecosystem
+                    </h6>
+                    <p style="font-size: smaller; margin-top: 10px">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ea
+                        asperiores totam? Porro fugiat, dolores accusantium excepturi nisi
+                        amet, fuga aut aperiam dolorem pariatur asperiores nesciunt
+                        laboriosam laudantium repudiandae iste?
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row">
+                    <div class="card w-50" id="c-card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                With supporting text below as a natural lead-in to additional
+                                content.
+                            </p>
+                            <img src="https://dvyvvujm9h0uq.cloudfront.net/com/articles/1525891879-886386-sam-burriss-457746-unsplashjpg.jpg"
+                                style="width: 40px; height: 40px; border-radius: 50%" alt="" />
+                        </div>
+                    </div>
+                    <div class="card w-50" id="c-card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                With supporting text below as a natural lead-in to additional
+                                content.
+                            </p>
+                            <img src="https://dvyvvujm9h0uq.cloudfront.net/com/articles/1525891879-886386-sam-burriss-457746-unsplashjpg.jpg"
+                                style="width: 40px; height: 40px; border-radius: 50%" alt="" />
+                        </div>
+                    </div>
+                    <div class="card w-50" id="c-card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                With supporting text below as a natural lead-in to additional
+                                content.
+                            </p>
+                            <img src="https://dvyvvujm9h0uq.cloudfront.net/com/articles/1525891879-886386-sam-burriss-457746-unsplashjpg.jpg"
+                                style="width: 40px; height: 40px; border-radius: 50%" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <!-- //sixth-section// -->
+    <center>
+        <div class="orange">
+            <div class="row">
+                <div class="col-4">
+                    <div class="one">
+                        <h1><b>#1</b></h1>
+                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquam mollitia doloremque
+                            nobis veritatis distinctio excepturi atque reprehenderit iusto tempora recusandae ipsa
+                            aperiam, odit eum consequuntur quaerat aspernatur! Quas, placeat?</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="home7-img-3.png" id="vector" alt="">
+                </div>
+                <div class="col-4">
+                        <div class="div" style="text-align: start;font-family: 'Poppins';font-style: normal;font-weight: 500;font-size: 38px;  line-height: 46px;/* or 122% */letter-spacing: 0.77px;color: #FFFFFF;">
+                            <h3>Are You <br> Ready to <br> Start Trading?</h3>
+                        </div>
+                        <button id="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+        </div><br><br><br><br><br><br><br><br>
+    </center>
+    <!-- //rating-section// -->
+    <div class="rating" id="about" >
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-1"></div>
+            <div class="col-7">
+                <h4>Do You Have A Question? <br> Feel Free To Connect</h4>
+                <p>+91 9562619506</p>
+                <h6>athulchonadath@gmail.com</h6>
+            </div>
+            <div class="col-4">
+                <h1><b>4.7</b></h1>
+                <h6>Rating In Google Business</h6>
+                <h6><i class="fa fa-star-half-o" style="color: rgb(255, 225, 0);" aria-hidden="true"></i><i
+                        class="fa fa-star-half-o" style="color: rgb(255, 225, 0);" aria-hidden="true"></i><i
+                        class="fa fa-star-half-o" aria-hidden="true"></i><i class="fa fa-star-half-o"
+                        aria-hidden="true"></i></h6>
+            </div>
+        </div>
+    </div>
+    <!-- //footer// -->
+    <div class="footer">
+        <div class="row" style="padding-top:10px;">
+            <div class="col-1"></div>
+            <div class="col-5" style="font-size: small;">@2022 millindots | all rights reserved | designed by noviindus
+            </div>
+            <div class="col-1" style="font-size: small;">About</div>
+            <div class="col-1" style="font-size: small;">Sappire</div>
+            <div class="col-1" style="font-size: small;">Contact</div>
+            <div class="col-1"><a href="#top"><button id="footer-arrow"><i class="fa fa-arrow-up"aria-hidden="true"></i></button></a></div>
+        </div>
+    </div>
+</body>
+</html>
